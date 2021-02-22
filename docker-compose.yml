@@ -55,7 +55,6 @@ services:
       - /mnt/data/supervisor/share/mylogger/TeslaLogger/www:/var/www/html
       - /mnt/data/supervisor/share/mylogger/TeslaLogger/bin:/etc/teslalogger
       #mancopy- /mnt/data/supervisor/share/docker/teslalogger/Dockerfile:/tmp/teslalogger-DOCKER
-      - /mnt/data/supervisor/share/mylogger/docker/teslalogger/teslalogger-DOCKER:/tmp/teslalogger-DOCKER
       - /mnt/data/supervisor/share/mylogger/teslalogger-tmp:/tmp/
     ports:
       - 8888:81
