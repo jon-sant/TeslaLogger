@@ -58,7 +58,7 @@ services:
       - /mnt/data/supervisor/share/mylogger/docker/teslalogger/teslalogger-DOCKER:/tmp/teslalogger-DOCKER
       - /mnt/data/supervisor/share/mylogger/teslalogger-tmp:/tmp/
     ports:
-      - 8888:80
+      - 8888:81
     environment:
       - TZ=Europe/Berlin
 
