@@ -3,12 +3,11 @@
 TeslaLogger is a self hosted data logger for your Tesla Model S/3/X/Y. Actually it supports RaspberryPi 3B, 3B+, 4B, Docker and Synology NAS.
 
 # Configuration for Homeassistant
-Make sure you have samba installed in homeassistant
-Open portainer, add new stack and point to this github
-Stop all containers
-Open samba to \\server\share
-Download this repo zip from github
-Extract all files to \share\TeslaLogger
+Make sure you have samba installed in homeassistant.  Open samba to \\server\share.  Make folder 'mylogger'.  Download this repo zip from github.  Extract all files to \share\mylogger\.
+
+Open portainer, add new stack and point to this github.
+
+Wait a ~5 min for DB init, view teslalogger container logs.
 
 ## Enter your Tesla crendentials
 Use your browser to go to:
