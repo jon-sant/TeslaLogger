@@ -5,12 +5,12 @@ services:
     build: docker/teslalogger/.
     restart: always
     volumes:
-      - ./TeslaLogger/www:/var/www/html
-      - ./TeslaLogger/bin:/etc/teslalogger
-      - ./TeslaLogger/GrafanaDashboards/:/var/lib/grafana/dashboards/
-      - ./TeslaLogger/GrafanaPlugins/:/var/lib/grafana/plugins
-      - ./docker/teslalogger/Dockerfile:/tmp/teslalogger-DOCKER
-      - teslalogger-tmp:/tmp/
+      - /mnt/data/supervisor/share/TeslaLogger/www:/var/www/html
+      - /mnt/data/supervisor/share/TeslaLogger/bin:/etc/teslalogger
+      - /mnt/data/supervisor/share/TeslaLogger/GrafanaDashboards/:/var/lib/grafana/dashboards/
+      - /mnt/data/supervisor/share/TeslaLogger/GrafanaPlugins/:/var/lib/grafana/plugins
+      - /mnt/data/supervisor/share/docker/teslalogger/Dockerfile:/tmp/teslalogger-DOCKER
+      - /mnt/data/supervisor/share/teslalogger-tmp:/tmp/
     depends_on:
       - database
     environment:
@@ -22,7 +22,7 @@ services:
     env_file:
       - .env
     volumes:
-      - ./TeslaLogger/sqlschema.sql:/docker-entrypoint-initdb.d/sqlschema.sql
+      - /mnt/data/supervisor/share/TeslaLogger/sqlschema.sql:/docker-entrypoint-initdb.d/sqlschema.sql
     ports:
       - 3306:3306
     environment:
@@ -37,11 +37,11 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./TeslaLogger/bin:/etc/teslalogger
-      - ./TeslaLogger/GrafanaDashboards/:/var/lib/grafana/dashboards/
-      - ./TeslaLogger/GrafanaPlugins/:/var/lib/grafana/plugins
-      - ./TeslaLogger/GrafanaConfig/datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yml
-      - ./TeslaLogger/GrafanaConfig/sample.yaml:/etc/grafana/provisioning/dashboards/dashboards.yml
+      - /mnt/data/supervisor/share/TeslaLogger/bin:/etc/teslalogger
+      - /mnt/data/supervisor/share/TeslaLogger/GrafanaDashboards/:/var/lib/grafana/dashboards/
+      - /mnt/data/supervisor/share/TeslaLogger/GrafanaPlugins/:/var/lib/grafana/plugins
+      - /mnt/data/supervisor/share/TeslaLogger/GrafanaConfig/datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yml
+      - /mnt/data/supervisor/share/TeslaLogger/GrafanaConfig/sample.yaml:/etc/grafana/provisioning/dashboards/dashboards.yml
     depends_on:
       - database
 
@@ -49,11 +49,11 @@ services:
     build: docker/webserver/.
     restart: always
     volumes:
-      - ./docker/webserver/php.ini:/usr/local/etc/php/php.ini
-      - ./TeslaLogger/www:/var/www/html
-      - ./TeslaLogger/bin:/etc/teslalogger
-      - ./docker/teslalogger/Dockerfile:/tmp/teslalogger-DOCKER
-      - teslalogger-tmp:/tmp/
+      - /mnt/data/supervisor/share/docker/webserver/php.ini:/usr/local/etc/php/php.ini
+      - /mnt/data/supervisor/share/TeslaLogger/www:/var/www/html
+      - /mnt/data/supervisor/share/TeslaLogger/bin:/etc/teslalogger
+      - /mnt/data/supervisor/share/docker/teslalogger/Dockerfile:/tmp/teslalogger-DOCKER
+      - /mnt/data/supervisor/share/teslalogger-tmp:/tmp/
     ports:
       - 8888:80
     environment:
