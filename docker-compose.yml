@@ -9,7 +9,7 @@ services:
       - /mnt/data/supervisor/share/TeslaLogger/bin:/etc/teslalogger
       - /mnt/data/supervisor/share/TeslaLogger/GrafanaDashboards/:/var/lib/grafana/dashboards/
       - /mnt/data/supervisor/share/TeslaLogger/GrafanaPlugins/:/var/lib/grafana/plugins
-      #- /mnt/data/supervisor/share/docker/teslalogger/Dockerfile:/tmp/teslalogger-DOCKER
+      #mancopy- /mnt/data/supervisor/share/docker/teslalogger/Dockerfile:/tmp/teslalogger-DOCKER
       - /mnt/data/supervisor/share/teslalogger-tmp:/tmp/
     depends_on:
       - database
@@ -22,7 +22,7 @@ services:
     env_file:
       - .env
     volumes:
-      - /mnt/data/supervisor/share/TeslaLogger/sqlschema.sql:/docker-entrypoint-initdb.d/sqlschema.sql
+      #mancopy- /mnt/data/supervisor/share/TeslaLogger/sqlschema.sql:/docker-entrypoint-initdb.d/sqlschema.sql
     ports:
       - 3306:3306
     environment:
@@ -51,10 +51,10 @@ services:
     restart: always
     volumes:
       - /mnt/data/supervisor/share/docker/webserver/:/usr/local/etc/php/
-      #- /mnt/data/supervisor/share/docker/webserver/php.ini:/usr/local/etc/php/php.ini
+      #mancopy- /mnt/data/supervisor/share/docker/webserver/php.ini:/usr/local/etc/php/php.ini
       - /mnt/data/supervisor/share/TeslaLogger/www:/var/www/html
       - /mnt/data/supervisor/share/TeslaLogger/bin:/etc/teslalogger
-      #- /mnt/data/supervisor/share/docker/teslalogger/Dockerfile:/tmp/teslalogger-DOCKER
+      #mancopy- /mnt/data/supervisor/share/docker/teslalogger/Dockerfile:/tmp/teslalogger-DOCKER
       - /mnt/data/supervisor/share/docker/teslalogger/teslalogger-DOCKER:/tmp/teslalogger-DOCKER
       - /mnt/data/supervisor/share/teslalogger-tmp:/tmp/
     ports:
