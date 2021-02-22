@@ -40,8 +40,9 @@ services:
       - /mnt/data/supervisor/share/TeslaLogger/bin:/etc/teslalogger
       - /mnt/data/supervisor/share/TeslaLogger/GrafanaDashboards/:/var/lib/grafana/dashboards/
       - /mnt/data/supervisor/share/TeslaLogger/GrafanaPlugins/:/var/lib/grafana/plugins
-      - /mnt/data/supervisor/share/TeslaLogger/GrafanaConfig/datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yml
-      - /mnt/data/supervisor/share/TeslaLogger/GrafanaConfig/sample.yaml:/etc/grafana/provisioning/dashboards/dashboards.yml
+      - /mnt/data/supervisor/share/TeslaLogger/GrafanaConfig/:/etc/grafana/provisioning/datasources/
+      #- /mnt/data/supervisor/share/TeslaLogger/GrafanaConfig/datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yml
+      #- /mnt/data/supervisor/share/TeslaLogger/GrafanaConfig/sample.yaml:/etc/grafana/provisioning/dashboards/dashboards.yml
     depends_on:
       - database
 
