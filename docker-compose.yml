@@ -50,7 +50,8 @@ services:
     build: docker/webserver/.
     restart: always
     volumes:
-      - /mnt/data/supervisor/share/docker/webserver/php.ini:/usr/local/etc/php/php.ini
+      - /mnt/data/supervisor/share/docker/webserver/:/usr/local/etc/php/
+      #- /mnt/data/supervisor/share/docker/webserver/php.ini:/usr/local/etc/php/php.ini
       - /mnt/data/supervisor/share/TeslaLogger/www:/var/www/html
       - /mnt/data/supervisor/share/TeslaLogger/bin:/etc/teslalogger
       - /mnt/data/supervisor/share/docker/teslalogger/Dockerfile:/tmp/teslalogger-DOCKER
