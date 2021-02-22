@@ -22,7 +22,7 @@ services:
     env_file:
       - .env
     volumes:
-      #mancopy- /mnt/data/supervisor/share/TeslaLogger/sqlschema.sql:/docker-entrypoint-initdb.d/sqlschema.sql
+      mancopy- /mnt/data/supervisor/share/TeslaLogger/sqlschema.sql:/docker-entrypoint-initdb.d/sqlschema.sql
     ports:
       - 3306:3306
     environment:
