@@ -17,7 +17,8 @@ services:
       - TZ=Europe/Berlin
 
   database:
-    image: mariadb:10.4.7
+    image: jsurf/rpi-mariadb
+    #image: mariadb:10.4.7
     restart: always
     env_file:
       - .env
