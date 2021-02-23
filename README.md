@@ -24,7 +24,7 @@ Change the language and units and reboot the Teslalogger.
 http://raspberry/admin/settings.php
 
 ## Admin Panel
-http://raspberry/admin/
+http://raspberry:8888/admin/
 
 ## Grafana-Dashboard
 http://raspberry:3000
