@@ -14,7 +14,7 @@ Very much not ideal.
 ## Enter your Tesla crendentials
 Use your browser to go to:
 
-http://raspberry/admin/password.php
+http://raspberry:8888/admin/password.php
 
 Enter the same credentials as you use in your teslaaccount or app.
 
