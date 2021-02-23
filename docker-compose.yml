@@ -59,7 +59,7 @@ services:
       #mancopy- /mnt/data/supervisor/share/docker/teslalogger/Dockerfile:/tmp/teslalogger-DOCKER
       - /mnt/data/supervisor/share/mylogger/teslalogger-tmp:/tmp/
     ports:
-      - 8888:81
+      - 8888:80
     environment:
       - TZ=Europe/Berlin
 
