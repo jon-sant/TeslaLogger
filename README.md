@@ -21,7 +21,7 @@ Available languages: English, German, Spanish, Italian, Norwegian, Nederlands, P
 
 Change the language and units and reboot the Teslalogger.
 
-http://raspberry/admin/settings.php
+http://raspberry:8888/admin/settings.php
 
 ## Admin Panel
 http://raspberry:8888/admin/
