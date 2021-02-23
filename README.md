@@ -9,6 +9,8 @@ Open portainer, add new stack and point to this github.
 
 Wait a ~5 min for DB init, view teslalogger container logs.
 
+Very much not ideal.
+
 ## Enter your Tesla crendentials
 Use your browser to go to:
 
